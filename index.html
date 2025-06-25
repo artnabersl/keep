@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -22,8 +22,15 @@
     }
     h1 {
       color: #ffcc00;
-      font-size: 28px;
+      font-size: 3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 6px rgba(255, 204, 0, 0.7);
       margin-bottom: 30px;
+      letter-spacing: 2px;
+    }
+    h1 span {
+      color: #e63946;
     }
     .highlight-box {
       background-color: #222;
@@ -86,7 +93,6 @@
       text-align: center;
       color: #777;
     }
-    /* Formular verstecken, bis Button gedrückt wird */
     #popupForm {
       display: none;
       background-color: #222;
@@ -106,7 +112,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>This Page Was Never Meant for the Public</h1>
+    <h1>This Page Was <span>NEVER</span> Meant for the Public — Find Out Why!</h1>
     
     <div class="highlight-box">
       Most people will <b>never see this page</b>. The methods revealed here are actively used by <b>underground marketers</b> to pull in leads and commissions while others struggle in silence.<br /><br />
@@ -127,12 +133,11 @@
       <button type="submit">Let Me In</button>
     </form>
 
-    <div id="thankYouMessage">Thank you for subscribing! Check your email inbox soon.</div>
+    <div id="thankYouMessage">Thank you for subscribing! Redirecting you now...</div>
 
     <h2>Want to Stay in the Loop?</h2>
     <p>Join the private list and get updates no one else sees. Just enter your details below.</p>
     
-    <!-- Das normale Formular unten bleibt für alle, die direkt eintragen wollen -->
     <form method="post" action="https://www.sendsteed.com/subscribe/">
       <input name="e110385" required type="email" placeholder="your@email.com" />
       <input name="n110385" required type="text" placeholder="Name" />
@@ -159,13 +164,14 @@
   });
 
   popupForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Verhindert das automatische Absenden zum Testen
-    
-    // Hier könnte man z.B. AJAX einbauen, um das Formular asynchron abzuschicken.
-    // Für jetzt einfach Danke anzeigen.
-    
+    e.preventDefault();
+
     popupForm.style.display = 'none';
     thankYouMessage.style.display = 'block';
+
+    setTimeout(() => {
+      window.location.href = 'https://llclick.com/cx957hbd/';
+    }, 3000);
   });
 </script>
 </body>
