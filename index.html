@@ -3,26 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>They Don’t Want You to See This</title>
+  <title>This Page Was NEVER Meant for the Public — Find Out Why!</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #f4f4f4;
+    body, html {
+      height: 100%;
       margin: 0;
-      padding: 0;
+      background-color: #111;
+      font-family: Arial, sans-serif;
+      color: #f4f4f4;
     }
-    .container {
+    .center-container {
+      height: 100%;
       max-width: 640px;
-      margin: 60px auto;
-      background-color: #1a1a1a;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
     }
     h1 {
       color: #ffcc00;
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 900;
       text-transform: uppercase;
       text-shadow: 2px 2px 6px rgba(255, 204, 0, 0.7);
@@ -42,6 +45,7 @@
       color: #eee;
       font-weight: 500;
       border-radius: 4px;
+      max-width: 100%;
     }
     .highlight-box b {
       color: #ffb703;
@@ -53,18 +57,36 @@
     }
     a.cta {
       display: inline-block;
-      margin: 25px 0 35px 0;
-      padding: 14px 24px;
+      padding: 18px 50px;
       background-color: #e63946;
       color: #fff;
-      text-decoration: none;
       font-weight: bold;
-      border-radius: 5px;
+      font-size: 1.5rem;
+      border-radius: 8px;
       cursor: pointer;
+      text-decoration: none;
+      animation: blink 1.2s infinite;
+      box-shadow: 0 0 10px #e63946;
       transition: background-color 0.3s;
+      margin-bottom: 30px;
     }
     a.cta:hover {
       background-color: #d62828;
+      box-shadow: 0 0 20px #d62828;
+    }
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0.4; }
+    }
+    #popupForm {
+      display: none;
+      background-color: #222;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(230, 57, 70, 0.7);
+      width: 100%;
+      max-width: 400px;
+      text-align: left;
     }
     form input, form button {
       width: 100%;
@@ -72,7 +94,7 @@
       padding: 12px;
       font-size: 16px;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
     }
     form input {
       background-color: #333;
@@ -83,96 +105,43 @@
       color: #000;
       font-weight: bold;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
     form button:hover {
       background-color: #05c495;
     }
-    .footer {
-      margin-top: 30px;
-      font-size: 13px;
-      text-align: center;
-      color: #777;
-    }
-    #popupForm {
-      display: none;
-      background-color: #222;
-      padding: 25px;
-      border-radius: 8px;
-      margin-top: 30px;
-      box-shadow: 0 0 15px rgba(230, 57, 70, 0.7);
-    }
-    #thankYouMessage {
-      display: none;
-      margin-top: 30px;
-      font-size: 18px;
-      color: #06d6a0;
-      font-weight: bold;
-    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="center-container">
     <h1>This Page Was <span>NEVER</span> Meant for the Public — Find Out Why!</h1>
-    
     <div class="highlight-box">
       Most people will <b>never see this page</b>. The methods revealed here are actively used by <b>underground marketers</b> to pull in leads and commissions while others struggle in silence.<br /><br />
       You weren’t supposed to find this. But since you did, you now have a <i>rare edge</i> over <b>97% of people who’ll never take action</b>.
     </div>
-    
-    <a class="cta" id="unlockBtn">
-      Unlock the System Now
-    </a>
+
+    <a href="#" class="cta" id="unlockBtn">Unlock the System Now</a>
 
     <form id="popupForm" method="post" action="https://www.sendsteed.com/subscribe/">
       <input name="e110385" required type="email" placeholder="your@email.com" />
       <input name="n110385" required type="text" placeholder="Name" />
       <input type="hidden" name="lllid" value="110385" />
       <input type="hidden" name="lluid" value="sandyarta" />
-      <input type="hidden" name="redirect" value="" />
+      <input type="hidden" name="redirect" value="https://deine-affiliatelinkseite.de" />
       <input type="hidden" name="source" value="homepage_affiliate" />
       <button type="submit">Let Me In</button>
     </form>
-
-    <div id="thankYouMessage">Thank you for subscribing! Redirecting you now...</div>
-
-    <h2>Want to Stay in the Loop?</h2>
-    <p>Join the private list and get updates no one else sees. Just enter your details below.</p>
-    
-    <form method="post" action="https://www.sendsteed.com/subscribe/">
-      <input name="e110385" required type="email" placeholder="your@email.com" />
-      <input name="n110385" required type="text" placeholder="Name" />
-      <input type="hidden" name="lllid" value="110385" />
-      <input type="hidden" name="lluid" value="sandyarta" />
-      <input type="hidden" name="redirect" value="" />
-      <input type="hidden" name="source" value="homepage_affiliate" />
-      <button type="submit">Let Me In</button>
-    </form>
-    
-    <div class="footer">
-      This page was created by an independent affiliate. Not endorsed or approved by any official source.
-    </div>
   </div>
 
-<script>
-  const unlockBtn = document.getElementById('unlockBtn');
-  const popupForm = document.getElementById('popupForm');
-  const thankYouMessage = document.getElementById('thankYouMessage');
+  <script>
+    const unlockBtn = document.getElementById('unlockBtn');
+    const popupForm = document.getElementById('popupForm');
 
-  unlockBtn.addEventListener('click', () => {
-    popupForm.style.display = 'block';
-    unlockBtn.style.display = 'none';
-  });
-
-  popupForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    popupForm.style.display = 'none';
-    thankYouMessage.style.display = 'block';
-
-    setTimeout(() => {
-      window.location.href = 'https://llclick.com/cx957hbd/';
-    }, 3000);
-  });
-</script>
+    unlockBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      popupForm.style.display = 'block';
+      unlockBtn.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
