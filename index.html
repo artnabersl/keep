@@ -53,6 +53,7 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 5px;
+      cursor: pointer;
       transition: background-color 0.3s;
     }
     a.cta:hover {
@@ -85,6 +86,22 @@
       text-align: center;
       color: #777;
     }
+    /* Formular verstecken, bis Button gedrückt wird */
+    #popupForm {
+      display: none;
+      background-color: #222;
+      padding: 25px;
+      border-radius: 8px;
+      margin-top: 30px;
+      box-shadow: 0 0 15px rgba(230, 57, 70, 0.7);
+    }
+    #thankYouMessage {
+      display: none;
+      margin-top: 30px;
+      font-size: 18px;
+      color: #06d6a0;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -96,15 +113,28 @@
       You weren’t supposed to find this. But since you did, you now have a <i>rare edge</i> over <b>97% of people who’ll never take action</b>.
     </div>
     
-    <a class="cta" href="https://llclick.com/cx957hbd/" target="_blank" rel="noopener noreferrer">
+    <a class="cta" id="unlockBtn">
       Unlock the System Now
     </a>
-    
+
+    <form id="popupForm" method="post" action="https://www.sendsteed.com/subscribe/">
+      <input name="e110385" required type="email" placeholder="your@email.com" />
+      <input name="n110385" required type="text" placeholder="Name" />
+      <input type="hidden" name="lllid" value="110385" />
+      <input type="hidden" name="lluid" value="sandyarta" />
+      <input type="hidden" name="redirect" value="" />
+      <input type="hidden" name="source" value="homepage_affiliate" />
+      <button type="submit">Let Me In</button>
+    </form>
+
+    <div id="thankYouMessage">Thank you for subscribing! Check your email inbox soon.</div>
+
     <h2>Want to Stay in the Loop?</h2>
     <p>Join the private list and get updates no one else sees. Just enter your details below.</p>
     
+    <!-- Das normale Formular unten bleibt für alle, die direkt eintragen wollen -->
     <form method="post" action="https://www.sendsteed.com/subscribe/">
-      <input name="e110385" required type="text" placeholder="your@email.com" />
+      <input name="e110385" required type="email" placeholder="your@email.com" />
       <input name="n110385" required type="text" placeholder="Name" />
       <input type="hidden" name="lllid" value="110385" />
       <input type="hidden" name="lluid" value="sandyarta" />
@@ -117,5 +147,26 @@
       This page was created by an independent affiliate. Not endorsed or approved by any official source.
     </div>
   </div>
+
+<script>
+  const unlockBtn = document.getElementById('unlockBtn');
+  const popupForm = document.getElementById('popupForm');
+  const thankYouMessage = document.getElementById('thankYouMessage');
+
+  unlockBtn.addEventListener('click', () => {
+    popupForm.style.display = 'block';
+    unlockBtn.style.display = 'none';
+  });
+
+  popupForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Verhindert das automatische Absenden zum Testen
+    
+    // Hier könnte man z.B. AJAX einbauen, um das Formular asynchron abzuschicken.
+    // Für jetzt einfach Danke anzeigen.
+    
+    popupForm.style.display = 'none';
+    thankYouMessage.style.display = 'block';
+  });
+</script>
 </body>
 </html>
