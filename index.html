@@ -117,7 +117,7 @@
     <h1>This Page Was <span>NEVER</span> Meant for the Public — Find Out Why!</h1>
     <div class="highlight-box">
       Most people will <b>never see this page</b>. The methods revealed here are actively used by <b>underground marketers</b> to pull in leads and commissions while others struggle in silence.<br /><br />
-      You weren’t supposed to find this. But since you did, you now have a <i>rare edge</i> over <b>97% of people who’ll never take action</b>.
+      You weren't supposed to find this. But since you did, you now have a <i>rare edge</i> over <b>97% of people who'll never take action</b>.
     </div>
 
     <a href="#" class="cta" id="unlockBtn">Unlock the System Now</a>
@@ -129,7 +129,7 @@
       <input type="hidden" name="lluid" value="sandyarta" />
       <!-- Affiliate-Link entfernt / leer gelassen -->
       <input type="hidden" name="redirect" value="" />
-      <input type="hidden" name="source" value="homepage_affiliate" />
+      <input type="hidden" name="source" id="trafficSource" value="" />
       <button type="submit">Let Me In</button>
     </form>
   </div>
@@ -137,6 +137,45 @@
   <script>
     const unlockBtn = document.getElementById('unlockBtn');
     const popupForm = document.getElementById('popupForm');
+    const trafficSourceField = document.getElementById('trafficSource');
+
+    // Funktion zur Erkennung der Traffic-Quelle
+    function detectTrafficSource() {
+      // Überprüfe UTM-Parameter zuerst
+      const urlParams = new URLSearchParams(window.location.search);
+      
+      if (urlParams.has('utm_source')) {
+        return 'utm_' + urlParams.get('utm_source');
+      }
+      // Überprüfe Referrer
+      else if (document.referrer) {
+        try {
+          const referrer = new URL(document.referrer);
+          if (referrer.hostname.includes('facebook.com')) return 'facebook';
+          if (referrer.hostname.includes('google.com')) return 'google';
+          if (referrer.hostname.includes('twitter.com')) return 'twitter';
+          if (referrer.hostname.includes('instagram.com')) return 'instagram';
+          if (referrer.hostname.includes('youtube.com')) return 'youtube';
+          if (referrer.hostname.includes('tiktok.com')) return 'tiktok';
+          return 'referral_' + referrer.hostname.replace('www.', '');
+        } catch (e) {
+          return 'referral_unknown';
+        }
+      }
+      // Direkter Traffic
+      else {
+        return 'direct';
+      }
+    }
+
+    // Beim Laden der Seite die Quelle ermitteln und eintragen
+    document.addEventListener('DOMContentLoaded', function() {
+      const source = detectTrafficSource();
+      trafficSourceField.value = source;
+      
+      // Optional: Quelle auch in der Konsole ausgeben zur Kontrolle
+      console.log('Traffic source detected:', source);
+    });
 
     unlockBtn.addEventListener('click', function(e) {
       e.preventDefault();
