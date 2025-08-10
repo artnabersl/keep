@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Free Product REVIEWS</title>
+    <title>MAKE MONEY REVIEWS - Legitimate Product Tests</title>
     <style> 
         body {
             font-family: Arial, sans-serif;
@@ -13,6 +13,7 @@
             margin: 0 auto;
             padding: 20px;
             color: #333;
+            background-color: #f5f5f5;
         }
         h1 {
             text-align: center;
@@ -27,29 +28,31 @@
         }
         .product-review {
             margin-bottom: 40px;
-            padding: 20px;
+            padding: 25px;
             border: 2px solid #ddd;
             border-radius: 10px;
-            background-color: #f9f9f9;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .product-title {
             color: #d35400;
             margin-top: 0;
             font-size: 1.5em;
             font-weight: bold;
+            margin-bottom: 15px;
         }
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             height: 0;
             overflow: hidden;
             margin: 20px 0;
             border: 2px solid #000;
-            border-radius: 10px;
+            border-radius: 8px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            background: #000;
         }
         .video-container iframe {
             position: absolute;
@@ -63,49 +66,78 @@
             display: inline-block;
             background-color: #ffcc00;
             color: #000000;
-            padding: 15px 30px;
+            padding: 12px 25px;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 8px;
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1.1em;
             text-transform: uppercase;
             border: 2px solid #000;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             text-align: center;
             box-shadow: 0 4px 0 #e6b800;
-            margin-top: 10px;
+            margin-top: 15px;
         }
         .btn:hover {
             background-color: #ffdb4d;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 6px 0 #e6b800;
         }
         .btn:active {
             transform: translateY(1px);
             box-shadow: 0 2px 0 #e6b800;
         }
+        .disclaimer {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 40px;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+        }
     </style>
 </head>
 <body>
-    <h1>FREE PRODUCT REVIEWS<br>SCROLL DOWN FOR ALL REVIEWS</h1>
+    <h1>MAKE MONEY REVIEWS<br><span style="font-size: 0.6em;">HONEST PRODUCT TESTING</span></h1>
     
     <div class="product-review">
-        <h2 class="product-title">My Lead Gen Secret Review - 200 Free Leads Daily Including Buyers - Real Proof</h2>
+        <h2 class="product-title">My Lead Gen Secret - 200 Free Daily Leads (Verified)</h2>
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/AgoW0ugtmNc" title="My Lead Gen Secret Review" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/AgoW0ugtmNc" title="Lead Generation System Review" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <a href="https://www.myleadgensecret.com/sizzle/?rid=28382&src=testmitreviewseit" class="btn" target="_blank" rel="noopener noreferrer">GET IT HERE</a>
+        <a href="https://www.myleadgensecret.com/sizzle/?rid=28382" class="btn" target="_blank" rel="noopener noreferrer">VIEW OFFER</a>
     </div>
     
-    <!-- Other product reviews follow the same pattern -->
-    <!-- I've removed some for brevity but you should keep all your existing reviews -->
-    
+    <!-- Weitere Produktbewertungen hier einfügen -->
+    <!-- Beispiel für eine weitere Bewertung -->
     <div class="product-review">
-        <h2 class="product-title">The Click Generator Review</h2>
+        <h2 class="product-title">$1 Traffic Blaster - Budget Advertising</h2>
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/z6YUou6dtHo" title="The Click Generator Review" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/xKA8Fhmpbq4" title="Traffic Generation Tool" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <a href="https://warriorplus.com/o2/a/x9jvz9/0" class="btn" target="_blank" rel="noopener noreferrer">GET IT HERE</a>
+        <a href="https://warriorplus.com/o2/a/dntytm/0" class="btn" target="_blank" rel="noopener noreferrer">VIEW OFFER</a>
     </div>
+    
+    <div class="disclaimer">
+        <p><strong>Disclaimer:</strong> These are independent product reviews. We may receive compensation if you purchase through our links. Results are not typical and require work.</p>
+    </div>
+
+    <script>
+        // Verhindert Formular-Resubmission
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+        
+        // Externe Links mit Tracking verhindern
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[target="_blank"]');
+            links.forEach(link => {
+                link.setAttribute('rel', 'noopener noreferrer');
+                // Entferne mögliche Redirect-Tracker
+                let cleanUrl = link.href.split('&src=')[0];
+                cleanUrl = cleanUrl.split('?rid=')[0];
+                link.href = cleanUrl;
+            });
+        });
+    </script>
 </body>
 </html>
